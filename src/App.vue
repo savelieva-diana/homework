@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import Button from "./components/Button.vue";
 </script>
 
@@ -13,4 +13,8 @@ import Button from "./components/Button.vue";
   padding: 60px 50px;
   border-radius: 25px;
 }
-</style>
+</style> -->
+<script setup>
+import Button from "./components/Button.vue";
+</script>
+<template><Button /></template>
