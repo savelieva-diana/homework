@@ -1,7 +1,16 @@
 <script setup>
-let date = new Date().toLocaleDateString();
+import Button from "./components/Button.vue";
 </script>
 
 <template>
-  <div>Сегодняшняя дата: {{ date }}</div>
+  <main class="main">
+    <Button> <template #icon>+</template>Сохранить</Button>
+  </main>
 </template>
+<style scoped>
+.main {
+  background: var(--color-bg-main);
+  padding: 60px 50px;
+  border-radius: 25px;
+}
+</style>
