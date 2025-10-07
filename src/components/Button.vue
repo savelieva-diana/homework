@@ -16,6 +16,9 @@
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  gap: 9px;
+  align-items: center;
 }
 .button:hover {
   background: var(--gradient-inverted);
