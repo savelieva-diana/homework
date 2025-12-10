@@ -4,17 +4,25 @@ import Button from "./components/Button.vue";
 import Score from "./components/Score.vue";
 import Card from "./components/Card.vue";
 
-const score = 100;
+const score = ref(100);
 const gameStarted = ref(false);
+const card = ref({
+  word: "unadmitted",
+  translation: "недопущенный",
+  state: "closed",
+  status: "pending",
+});
 </script>
 
 <template>
-  <div v-if="!gameStarted">
+  <div>
     <p class="word">Запомни слово</p>
     <Score :score="score" />
-    <Button @start="gameStarted = true" />
+    <div v-if="!gameStarted">
+      <Button @start="gameStarted = true" />
+    </div>
+    <Card v-if="gameStarted" :card="card" />
   </div>
-  <Card v-if="gameStarted" />
 </template>
 
 <style scoped>
