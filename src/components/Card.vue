@@ -5,8 +5,12 @@ import wrongBig from "../assets/Close.png";
 import correctSmall from "../assets/Tick Square.png";
 import wrongSmall from "../assets/Close Square.png";
 
-const word = "unadmitted";
-const translation = "недопущенный";
+defineProps({
+  card: {
+    type: Object,
+    required: true,
+  },
+});
 const isFlipped = ref(false);
 const result = ref(null);
 
@@ -28,7 +32,7 @@ const handleWrong = () => {
     <div class="card__container" :class="{ flipped: isFlipped }">
       <div class="card__side card__side-front">
         <div class="card__wrapper">
-          <p class="card__title">{{ word }}</p>
+          <p class="card__title">{{ card.word }}</p>
           <p class="card__text-bottom">перевернуть</p>
           <p class="card__text-top">01</p>
         </div>
@@ -36,7 +40,7 @@ const handleWrong = () => {
 
       <div class="card__side card__side-back">
         <div class="card__wrapper">
-          <p class="card__title">{{ translation }}</p>
+          <p class="card__title">{{ card.translation }}</p>
           <div v-if="result" class="card__top-icon">
             <img
               :src="result === 'correct' ? correctBig : wrongBig"
