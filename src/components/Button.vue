@@ -19,6 +19,9 @@
   display: flex;
   gap: 9px;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: 53px;
 }
 .button:hover {
   background: var(--gradient-inverted);

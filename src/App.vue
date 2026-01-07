@@ -1,15 +1,31 @@
 <script setup>
 import Stat from "./components/Stat.vue";
 import CitySelect from "./components/CitySelect.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
-const data = {
-  label: "Влажность",
-  stat: "90 %",
-};
+let data = ref({
+  humidity: 90,
+  rain: 0,
+  wind: 3,
+});
 
 let savedCity = ref("Moscow");
-
+const dataModified = computed(() => {
+  return [
+    {
+      label: "Влажность",
+      stat: data.value.humidity + "%",
+    },
+    {
+      label: "Осадки",
+      stat: data.value.rain + "%",
+    },
+    {
+      label: "Ветер",
+      stat: data.value.wind + "м/ч",
+    },
+  ];
+});
 function getCity(city) {
   savedCity.value = city;
   console.log(city);
@@ -18,9 +34,7 @@ function getCity(city) {
 
 <template>
   <main class="main">
-    {{ savedCity }}
-    <Stat v-bind="data" />
-    <Stat label="Осадки" stat="0 %" />
+    <Stat v-for="item in dataModified" v-bind="item" :key="item.label" />
     <CitySelect @select-city="getCity" />
   </main>
 </template>

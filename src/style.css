@@ -4,6 +4,7 @@
   --color-primary-inverted: #000000;
   --color-bg-card: #272e37;
   --color-bg-main: #222831;
+  --color-text-placeholder: #3f4958;
   --font: "Montserrat", sans-serif;
   --gradient: linear-gradient(
     90.8deg,
@@ -15,6 +16,9 @@
     rgba(144, 217, 224, 0.9) 9.04%,
     rgba(84, 96, 230, 0.9) 92.2%
   );
+}
+* {
+  box-sizing: border-box;
 }
 body {
   font-synthesis: none;
