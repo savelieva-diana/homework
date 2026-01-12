@@ -34,7 +34,7 @@ const handleWrong = () => {
         <div class="card__wrapper">
           <p class="card__title">{{ card.word }}</p>
           <p class="card__text-bottom">перевернуть</p>
-          <p class="card__text-top">01</p>
+          <p class="card__text-top">{{ card.number }}</p>
         </div>
       </div>
 

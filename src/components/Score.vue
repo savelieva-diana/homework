@@ -1,10 +1,12 @@
 <script setup>
-const props = defineProps(["score"]);
+defineProps({
+  score: Number,
+});
 </script>
 
 <template>
   <div class="score">
-    {{ props.score }} <img src="../assets/Heart.png" alt="heart" />
+    {{ score }} <img src="../assets/Heart.png" alt="heart" />
   </div>
 </template>
 
@@ -13,7 +15,7 @@ const props = defineProps(["score"]);
   font-family: var(--font);
   font-weight: 700;
   color: #008bfe;
-  size: 16px;
+  font-size: 16px;
   background-color: #cce8ff;
   width: 110px;
   height: 48px;
@@ -21,9 +23,7 @@ const props = defineProps(["score"]);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 49px;
-  right: 66px;
   gap: 10px;
+  cursor: pointer;
 }
 </style>

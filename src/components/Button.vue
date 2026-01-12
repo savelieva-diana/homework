@@ -17,6 +17,5 @@ defineEmits(["start"]);
   font-family: var(--font);
   font-weight: 400;
   font-size: 24px;
-  cursor: pointer;
 }
 </style>
